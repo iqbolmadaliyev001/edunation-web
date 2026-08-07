@@ -175,8 +175,11 @@ async function verify() {
 
     <!-- 2-bosqich: kod -->
     <div v-else class="stack">
+      <!-- SMS shlyuz ulanmagan: kod javobda keladi va maydonga o'zi qo'yiladi.
+           Foydalanuvchi telefonida SMS kutib qolmasligi uchun ochiq aytamiz. -->
       <div v-if="debugCode" class="devhint">
-        <Icon name="code" :size="15" /> Dev kod: <b>{{ debugCode }}</b>
+        <Icon name="code" :size="15" />
+        <span>Test rejimi — SMS yuborilmadi. Kod: <b>{{ debugCode }}</b></span>
       </div>
 
       <BaseInput
