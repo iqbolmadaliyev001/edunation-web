@@ -1,0 +1,117 @@
+/* ==========================================================================
+   EduNation — Dizayn tokenlari
+   Yagona haqiqat manbai: docs/BRAND.md. Bu fayl shuning kod ko'rinishi.
+   Havo rang + oq, ikkalasi ham gradient — lekin ierarxiya vositasi sifatida.
+   ========================================================================== */
+
+:root {
+  /* ---- Sky (havo rang) — asosiy brend ---- */
+  --sky-50:  #EFF8FF;
+  --sky-100: #DCEFFE;
+  --sky-200: #B9DFFD;
+  --sky-300: #86C8FA;
+  --sky-400: #4CACF4;
+  --sky-500: #2490E6;   /* asosiy brend rangi */
+  --sky-600: #1272C4;
+  --sky-700: #105A9E;
+  --sky-800: #124D82;
+  --sky-900: #14416C;
+  --sky-950: #0D2947;
+
+  /* ---- Ink — ko'k tusli neytral ---- */
+  --ink-50:  #F4F8FB;
+  --ink-100: #E4EDF3;
+  --ink-200: #C9D9E4;
+  --ink-300: #A0B8C9;
+  --ink-400: #6E90A9;
+  --ink-500: #3D6B8A;
+  --ink-600: #23516F;
+  --ink-700: #173A59;
+  --ink-800: #102B44;
+  --ink-900: #0A1E31;
+  --ink-950: #061320;
+
+  /* ---- Semantik ---- */
+  --success-500: #16A37B;
+  --success-50:  #E7F6F0;
+  --warning-500: #E0A517;
+  --warning-50:  #FBF3DF;
+  --danger-500:  #DC4B4B;
+  --danger-50:   #FBE9E9;
+  --gold-500:    #E3A008;
+
+  /* ---- Gradientlar ---- */
+  --grad-brand:      linear-gradient(135deg, #1272C4 0%, #2490E6 52%, #4CACF4 100%);
+  --grad-brand-soft: linear-gradient(135deg, #EFF8FF 0%, #DCEFFE 100%);
+  --grad-surface:    linear-gradient(180deg, #FFFFFF 0%, #F4F8FB 100%);
+  --grad-deep:       linear-gradient(140deg, #0D2947 0%, #124D82 60%, #105A9E 100%);
+  --grad-line:       linear-gradient(90deg, transparent, #B9DFFD 50%, transparent);
+  --grad-mesh:
+    radial-gradient(60% 55% at 12% 8%,   rgba(76,172,244,.18), transparent 62%),
+    radial-gradient(50% 45% at 88% 4%,   rgba(134,200,250,.16), transparent 60%),
+    radial-gradient(70% 60% at 50% 100%, rgba(220,239,254,.55), transparent 70%),
+    #FFFFFF;
+
+  /* ---- Soyalar (qora emas, ko'k tusli) ---- */
+  --shadow-xs:    0 1px 2px  rgba(16, 45, 74, .06);
+  --shadow-sm:    0 2px 8px  rgba(16, 45, 74, .06);
+  --shadow-md:    0 8px 24px rgba(16, 45, 74, .08);
+  --shadow-lg:    0 20px 48px rgba(16, 45, 74, .10);
+  --shadow-xl:    0 32px 72px rgba(16, 45, 74, .12);
+  --shadow-brand: 0 8px 24px rgba(36, 144, 230, .28);
+  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, .6);
+
+  /* ---- Radiuslar ---- */
+  --r-xs: 6px;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --r-full: 999px;
+
+  /* ---- Oraliqlar (4px bazasi) ---- */
+  --sp-1: 4px;   --sp-2: 8px;   --sp-3: 12px;  --sp-4: 16px;
+  --sp-5: 20px;  --sp-6: 24px;  --sp-8: 32px;  --sp-10: 40px;
+  --sp-12: 48px; --sp-16: 64px; --sp-20: 80px; --sp-30: 120px;
+
+  /* ---- Tipografika ---- */
+  --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* ---- Fokus halqasi ---- */
+  --focus-ring: 0 0 0 3px rgba(36, 144, 230, .35);
+
+  /* ---- Semantik yuzalar (yorug' rejim) ---- */
+  --bg: var(--ink-50);
+  --surface: #FFFFFF;
+  --surface-2: var(--ink-50);
+  --border: var(--ink-100);
+  --border-strong: var(--ink-200);
+  --text: var(--ink-800);
+  --text-soft: var(--ink-600);
+  --text-muted: var(--ink-400);
+  --brand: var(--sky-500);
+  --brand-strong: var(--sky-600);
+  --on-brand: #FFFFFF;
+
+  --container: 1200px;
+  --header-h: 68px;
+}
+
+/* ---- Qorong'i rejim (panellar uchun; landing faqat yorug') ---- */
+:root[data-theme='dark'] {
+  --bg: var(--ink-950);
+  --surface: var(--ink-900);
+  --surface-2: #0C2138;
+  --border: var(--ink-800);
+  --border-strong: #1B3B57;
+  --text: #EAF2F8;
+  --text-soft: var(--ink-200);
+  --text-muted: var(--ink-400);
+  --brand: var(--sky-400);
+  --brand-strong: var(--sky-300);
+  --grad-surface: linear-gradient(180deg, #0C2138 0%, #0A1E31 100%);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, .3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, .35);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, .45);
+}
