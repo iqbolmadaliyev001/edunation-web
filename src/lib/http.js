@@ -28,8 +28,20 @@ export const tokenStore = {
   },
 }
 
+/**
+ * API manzili.
+ *
+ * Dev'da bo'sh qoldiriladi — Vite `/api` ni backendga proxy qiladi, shunda
+ * bitta origin ostida ishlaymiz va CORS umuman kerak bo'lmaydi.
+ * Produksiyada (Vercel) `VITE_API_URL` build paytida to'ldiriladi va
+ * to'g'ridan-to'g'ri Railway'dagi backendga boradi.
+ */
+export const API_BASE = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL.replace(/\/$/, '')}/api/v1`
+  : '/api/v1'
+
 const http = axios.create({
-  baseURL: '/api/v1',
+  baseURL: API_BASE,
   headers: { 'X-Client': 'web' },
   timeout: 20000,
 })
@@ -45,7 +57,8 @@ let refreshing = null
 async function runRefresh() {
   const refresh = tokenStore.refresh
   if (!refresh) throw new Error('no-refresh')
-  const { data } = await axios.post('/api/v1/auth/refresh/', { refresh })
+  // Interceptorlarsiz toza so'rov — aks holda cheksiz sikl bo'ladi
+  const { data } = await axios.post(`${API_BASE}/auth/refresh/`, { refresh })
   tokenStore.set({ access: data.access, refresh: data.refresh })
   return data.access
 }
