@@ -45,6 +45,8 @@ export const centersApi = {
   moderate: (slug, payload) => http.post(`/centers/${slug}/moderate/`, payload).then((r) => r.data),
   teachers: (params) => http.get('/centers/teachers/', { params }).then((r) => r.data),
   branches: (params) => http.get('/centers/branches/', { params }).then((r) => r.data),
+  createBranch: (payload) => http.post('/centers/branches/', payload).then((r) => r.data),
+  updateBranch: (id, payload) => http.patch(`/centers/branches/${id}/`, payload).then((r) => r.data),
 }
 
 export const reviewsApi = {
